@@ -1,3 +1,4 @@
+import { URL } from '../../base'
 import { 
     PROPERTY_SEARCH_SUCCESS, 
     PROPERTY_SEARCH_REQUEST, 
@@ -18,7 +19,7 @@ export const listSearch = (keyword, signal) => async (dispatch) => {
     try {
         dispatch({type: PROPERTY_SEARCH_REQUEST})
 
-        const { data } = await axios.get(`/api/property/searchproperty?`+keyword)
+        const { data } = await axios.get(`${URL}/api/property/searchproperty?`+keyword)
           dispatch({type: PROPERTY_SEARCH_SUCCESS,
             payload: data
         })
@@ -34,7 +35,7 @@ export const priceSearch = (query, signal) => async (dispatch) => {
     try {
         dispatch({type: PRICE_SEARCH_REQUEST})
 
-        const {data} = await axios.get(`/api/property/pricesearch?`+query)
+        const {data} = await axios.get(`${URL}/api/property/pricesearch?`+query)
         dispatch({type: PRICE_SEARCH_SUCCESS,
             payload: data
         })
@@ -51,7 +52,7 @@ export const roomSearch = (roomNumber, signal) => async (dispatch) => {
     try {
         dispatch({type: ROOM_SEARCH_REQUEST})
         
-        const { data } = await axios.get(`/api/property/roomnumber?`+roomNumber)
+        const { data } = await axios.get(`${URL}/api/property/roomnumber?`+roomNumber)
         dispatch({type: ROOM_SEARCH_SUCCESS,
           payload: data          
       })

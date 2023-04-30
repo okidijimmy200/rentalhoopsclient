@@ -1,6 +1,7 @@
+import { URL } from '../base'
 const signin = async (user) => {
   try {
-    let response = await fetch('api/auth/signin/', {
+    let response = await fetch(`${URL}/api/auth/signin/`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -17,7 +18,7 @@ const signin = async (user) => {
 
 const signout = async () => {
   try {
-    let response = await fetch('api/auth/signout/', { method: 'GET' })
+    let response = await fetch( `${URL}/api/auth/signout/`, { method: 'GET' })
     return await response.json()
   } catch(err) {
     console.log(err)

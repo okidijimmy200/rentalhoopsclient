@@ -1,8 +1,9 @@
+import { URL } from '../base'
 const queryString = require('query-string');
 
 const create = async (params, credentials, property) => {
     try {
-      let response = await fetch('/api/property/by/'+ params.userId, {
+      let response = await fetch(`${URL}/api/property/by/`+ params.userId, {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
@@ -19,7 +20,7 @@ const create = async (params, credentials, property) => {
   //API to list property by landlord
 const listByLandlord = async (params, credentials, signal) => {
   try {
-    let response = await fetch('/api/property/by/'+ params.userId, {
+    let response = await fetch(`${URL}/api/property/by/`+ params.userId, {
       method: 'GET',
       signal: signal,
       headers: {
@@ -36,7 +37,7 @@ const listByLandlord = async (params, credentials, signal) => {
 // API endpoint for listing all properties
 const listAllProperties = async (signal) => {
   try {
-    let response = await fetch('/api/property/allproperty',{
+    let response = await fetch(`${URL}/api/property/allproperty`,{
       method: 'GET',
       signal: signal
     })
@@ -50,7 +51,7 @@ const listAllProperties = async (signal) => {
 const searchProperty = async (params, signal) => {
   const query = queryString.stringify(params)
   try {
-    let response = await fetch(`/api/property/searchproperty?`+query, {
+    let response = await fetch(`${URL}/api/property/searchproperty?`+query, {
       method: 'GET',
     })
     return response.json()
@@ -62,7 +63,7 @@ const searchProperty = async (params, signal) => {
 //list properties by categories
 const listCategories = async (signal) => {
   try {
-    let response = await fetch('/api/property/categories', {
+    let response = await fetch(`${URL}/api/property/categories`, {
       method: 'GET',
       signal: signal
     })
@@ -75,7 +76,7 @@ const listCategories = async (signal) => {
 // notify api
 const like = async (params, credentials, propertyId) => {
   try {
-    let response = await fetch('/api/property/like', {
+    let response = await fetch(`${URL}/api/property/like`, {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',
@@ -92,7 +93,7 @@ const like = async (params, credentials, propertyId) => {
 
 const unlike = async (params, credentials, propertyId) => {
   try {
-    let response = await fetch('/api/property/unlike', {
+    let response = await fetch(`${URL}/api/property/unlike`, {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',
@@ -110,7 +111,7 @@ const unlike = async (params, credentials, propertyId) => {
 //favourite API /api/property/favourite
 const favourite  = async (signal) => {
   try {
-    let response = await fetch('/api/property/favourite', {
+    let response = await fetch(`${URL}/api/property/favourite`, {
       method: 'GET',
       signal: signal,
       headers: {
@@ -126,7 +127,7 @@ const favourite  = async (signal) => {
 
 const readPropertyViews = async (params, signal) => {
   try {
-    let response = await fetch('/api/property/' + params.propertyId, {
+    let response = await fetch(`${URL}/api/property/` + params.propertyId, {
       method: 'GET',
       signal: signal
     })
@@ -138,7 +139,7 @@ const readPropertyViews = async (params, signal) => {
 
 const SavedProperty = async (params, credentials, signal) => {
   try {
-    let response = await fetch('/api/likescount/' + params.userId, {
+    let response = await fetch(`${URL}/api/likescount/` + params.userId, {
       method: 'GET',
       signal: signal,
       headers: {
@@ -156,7 +157,7 @@ const SavedProperty = async (params, credentials, signal) => {
 const searchPrice = async (params, signal) => {
   const query = queryString.stringify(params)
   try {
-    let response = await fetch('/api/property/pricesearch?'+query, {
+    let response = await fetch(`${URL}/api/property/pricesearch?`+query, {
       method: 'GET',
     })
     return response.json()
@@ -167,7 +168,7 @@ const searchPrice = async (params, signal) => {
 
 const update = async (params, credentials, property) => {
   try {
-    let response = await fetch('/api/property/' + params.userId +'/'+params.propertyId, {
+    let response = await fetch(`${URL}/api/property/` + params.userId +'/'+params.propertyId, {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',
@@ -183,7 +184,7 @@ const update = async (params, credentials, property) => {
 
 const remove = async (params, credentials) => {
   try {
-    let response = await fetch('/api/property/' + params.userId +'/'+params.propertyId, {
+    let response = await fetch(`${URL}/api/property/` + params.userId +'/'+params.propertyId, {
       method: 'DELETE',
       headers: {
         'Accept': 'application/json',
