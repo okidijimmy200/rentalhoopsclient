@@ -2223,7 +2223,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"URL\": () => (/* binding */ URL)\n/* harmony export */ });\nvar URL = 'https://rentalhoops-server.herokuapp.com/';\n\n\n//# sourceURL=webpack://client/./src/base.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"URL\": () => (/* binding */ URL)\n/* harmony export */ });\nvar URL = 'https://rentalhoops-server.herokuapp.com';\n\n\n//# sourceURL=webpack://client/./src/base.js?");
 
 /***/ }),
 

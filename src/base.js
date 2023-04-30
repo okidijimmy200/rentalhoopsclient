@@ -1,4 +1,4 @@
-const URL = 'https://rentalhoops-server.herokuapp.com/'
+const URL = 'https://rentalhoops-server.herokuapp.com'
 
 export {
     URL
