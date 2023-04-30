@@ -6,7 +6,7 @@ module.exports = {
   mode: 'development',
   output: {
     filename: 'output.bundle.js',
-    path:path.resolve(__dirname, "./public"),
+    path:path.resolve(__dirname, "./dist"),
   },
   module: {
     rules: [
@@ -32,7 +32,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "public", "index.html"),
+      template: path.join(__dirname, "dist", "index.html"),
     }),
   ],
 }
